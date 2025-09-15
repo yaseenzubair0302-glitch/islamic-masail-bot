@@ -1,0 +1,27 @@
+import os
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+
+# Bot token environment variable سے لے رہے ہیں
+TOKEN = os.getenv("BOT_TOKEN")
+
+def start(update, context):
+    update.message.reply_text("السلام علیکم! یہ اسلامی مسائل کا بوٹ ہے۔ آپ کوئی بھی سوال پوچھ سکتے ہیں۔")
+
+def handle_message(update, context):
+    text = update.message.text
+    # فی الحال صرف یہی جواب دے گا
+    reply = f"آپ نے پوچھا: {text}\n\nان شاء اللہ جلد ہی تفصیلی اسلامی جوابات شامل کیے جائیں گے۔"
+    update.message.reply_text(reply)
+
+def main():
+    updater = Updater(TOKEN, use_context=True)
+    dp = updater.dispatcher
+    
+    dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, handle_message))
+    
+    updater.start_polling()
+    updater.idle()
+
+if __name__ == "__main__":
+    main()
