@@ -1,0 +1,9 @@
+Build ready to start ▶️
+>> Cloning github.com/yaseenzubair0302-glitch/islamic-masail-bot.git commit sha 10f16cf50e289f9798b1ca725bb86b271f8ec1ea into /builder/workspace
+Initialized empty Git repository in /builder/workspace/.git/
+From https://github.com/yaseenzubair0302-glitch/islamic-masail-bot
+ * branch            10f16cf50e289f9798b1ca725bb86b271f8ec1ea -> FETCH_HEAD
+HEAD is now at 10f16cf Create Procfile
+Starting Docker daemon...
+Waiting for the Docker daemon to start...
+done
